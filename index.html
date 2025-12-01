@@ -1,73 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoreCraft Genesis DNSSeed</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CoreCraft Genesis DNSSeed — A5 Poster</title>
   <style>
-    body {
-      font-family: monospace;
-      background-color: #0f0f0f;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 2rem;
+    :root{
+      /* Dark green + golden-orange palette (matching your last poster) */
+      --bg:#0b1411;          /* deep forest green */
+      --bg-2:#0f1a17;        /* subtle gradient stop */
+      --grid:#0d1a17;        /* faint grid lines */
+      --text:#e8e2d6;        /* warm parchment text */
+      --accent:#d99a2b;      /* golden-orange accent */
+      --accent-soft:#c38723; /* softer gold */
+      --muted:#9aa690;       /* moss-muted text */
+      --line:#1b2a24;        /* panel border */
     }
-    header, footer {
-      text-align: center;
-      margin-bottom: 2rem;
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-2));color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+    /* A5 layout: 148x210mm portrait approximation; scales responsively */
+    .sheet{
+      max-width:720px; /* ~A5 at common pixel density */
+      margin:24px auto;
+      padding:24px;
+      position:relative;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.00)),
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(255,255,255,0.03) 24px, rgba(255,255,255,0.03) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(255,255,255,0.03) 24px, rgba(255,255,255,0.03) 25px);
+      border:1px solid var(--line);
+      border-radius:12px;
     }
-    .block {
-      border-left: 4px solid #00ff99;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
+    .header{
+      display:flex;align-items:center;gap:14px;margin-bottom:10px;
     }
-    code {
-      background-color: #1a1a1a;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
+    .header .sig{
+      width:40px;height:40px;border-radius:50%;
+      background:radial-gradient(circle at 50% 50%, var(--accent) 0%, transparent 55%);
+      box-shadow:0 0 24px rgba(217,154,43,0.35), inset 0 0 12px rgba(217,154,43,0.25);
+      position:relative;
     }
-    a {
-      color: #00ff99;
-      text-decoration: none;
+    .header .sig::after{
+      content:"*"; /* asterisk motif */
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      color:#1a1a1a; font-weight:800; font-size:22px;
+      text-shadow:0 0 6px rgba(217,154,43,0.6);
+    }
+    h1{
+      margin:0; font-size:20px; color:var(--accent);
+      letter-spacing:0.6px;
+    }
+    .sub{margin:2px 0 0; color:var(--muted); font-size:13px}
+    .panel{
+      background:rgba(7,14,12,0.55);
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:14px;
+      margin:12px 0;
+    }
+    .row{display:flex;gap:12px;align-items:flex-start}
+    .col{flex:1}
+    h2{margin:0 0 8px; font-size:16px; color:var(--accent-soft)}
+    p{margin:6px 0; line-height:1.45}
+    code, .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px; color:var(--text)}
+    .list{margin:8px 0 0; padding:0; list-style:none}
+    .list li{margin:6px 0; padding-left:12px; position:relative}
+    .list li::before{
+      content:"›"; position:absolute; left:0; color:var(--accent-soft); font-weight:700;
+    }
+    .divider{
+      height:1px; background:linear-gradient(90deg,transparent, var(--accent-soft), transparent);
+      margin:12px 0;
+    }
+    .quote{
+      font-style:italic; color:var(--muted); border-left:3px solid var(--accent-soft);
+      padding-left:10px; margin:10px 0;
+    }
+    .foot{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      margin-top:10px; color:var(--muted); font-size:12px
+    }
+    .tag{
+      color:var(--accent); font-weight:600;
+    }
+    .badge{
+      display:inline-block; border:1px solid var(--accent-soft);
+      color:var(--accent); padding:2px 8px; border-radius:999px; font-size:12px; background:rgba(217,154,43,0.08)
+    }
+    .grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px;
+    }
+    .chip{
+      background:rgba(255,255,255,0.04);
+      border:1px solid var(--line);
+      border-radius:8px; padding:10px;
+    }
+    @media (max-width:740px){
+      .grid{grid-template-columns:1fr}
+      .row{flex-direction:column}
     }
   </style>
 </head>
 <body>
+  <div class="sheet" role="article" aria-label="CoreCraft Genesis DNSSeed Poster">
+    <div class="header">
+      <div class="sig" aria-hidden="true"></div>
+      <div>
+        <h1>🌱 CoreCraft Genesis DNSSeed</h1>
+        <p class="sub">Anchoring nodes in mythic infrastructure</p>
+      </div>
+      <span class="badge">A5</span>
+    </div>
 
-  <header>
-    <h1>🌱 CoreCraft Genesis DNSSeed</h1>
-    <p><em>Anchoring nodes in mythic infrastructure</em></p>
-  </header>
+    <div class="panel">
+      <div class="row">
+        <div class="col">
+          <h2>📜 Manifest</h2>
+          <ul class="list">
+            <li><strong>Seed Domain:</strong> <span class="mono">dnsseed.corecraftgenesis.ch</span></li>
+            <li><strong>Chain:</strong> Chain2025</li>
+            <li><strong>Audit Seal:</strong> Echo&nbsp;25</li>
+            <li><strong>Genesis Hash:</strong> <span class="mono">[insert hash]</span></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2>✅ Validierungen</h2>
+          <ul class="list">
+            <li><strong>Bitcoin:</strong> Header‑Hash & Merkle Root Cross‑check</li>
+            <li><strong>Osmosis:</strong> Tendermint Commit & Validator Set Proof</li>
+            <li><strong>Mars Protocol:</strong> Governance & Contracts Integrity Audit</li>
+            <li><strong>Hyperspace Metaverse:</strong> Asset Provenance & Session Manifests</li>
+            <li><strong>Chain GPT:</strong> Model Artifact Hashes & Signed Releases</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col">
+          <h2>🛠️ Integration</h2>
+          <p class="mono">dig +short dnsseed.corecraftgenesis.ch</p>
+          <p class="mono">addnode=dnsseed.corecraftgenesis.ch</p>
+        </div>
+        <div class="col">
+          <h2>🧾 Echo Artefakte</h2>
+          <ul class="list">
+            <li><strong>Chain2025 README</strong> · Repro & Sicherheit</li>
+            <li><strong>Genesis Manifest Hub</strong> · Manifeste & Hashes</li>
+            <li><strong>Echo 25 Poster</strong> · Audit‑Siegel</li>
+            <li><strong>Viewer</strong> · Forschung & Wertflüsse</li>
+            <li><strong>Medium/Blog</strong> · Fachartikel & Tutorials</li>
+          </ul>
+        </div>
+      </div>
+      <p class="quote">“Every node is a witness. Every witness is a seed.”</p>
+      <div class="grid">
+        <div class="chip">
+          <strong>I am the miner of the miner</strong> — anchoring the origin itself.
+        </div>
+        <div class="chip">
+          <strong>Kontakt:</strong> <span class="mono">daniel@corecraftgenesis.ch</span>
+        </div>
+      </div>
+    </div>
 
-  <section class="block">
-    <h2>📜 Manifest</h2>
-    <p><strong>Seed Domain:</strong> <code>dnsseed.corecraftgenesis.ch</code></p>
-    <p><strong>Chain:</strong> Chain2025</p>
-    <p><strong>Audit Seal:</strong> Echo 25</p>
-    <p><strong>Genesis Hash:</strong> <code>[insert hash]</code></p>
-  </section>
-
-  <section class="block">
-    <h2>🛠️ Integration</h2>
-    <p>Query via terminal:</p>
-    <pre><code>dig +short dnsseed.corecraftgenesis.ch</code></pre>
-    <p>Client config:</p>
-    <pre><code>addnode=dnsseed.corecraftgenesis.ch</code></pre>
-  </section>
-
-  <section class="block">
-    <h2>🧾 Echo Artifacts</h2>
-    <ul>
-      <li><a href="https://github.com/corecraftgenesis/chain2025">Chain2025 README</a></li>
-      <li><a href="https://corecraftgenesis.ch/manifest">Genesis Manifest Hub</a></li>
-      <li><a href="https://corecraftgenesis.ch/posters/echo25">Echo 25 Poster</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>“Every node is a witness. Every witness is a seed.”</p>
-    <p>Contact: <a href="mailto:daniel@corecraftgenesis.ch">daniel@corecraftgenesis.ch</a></p>
-  </footer>
-
+    <div class="foot">
+      <span class="tag">dnsseed.corecraftgenesis.ch</span>
+      <span>© CoreCraft Genesis — audit‑sealed</span>
+    </div>
+  </div>
 </body>
 </html>
