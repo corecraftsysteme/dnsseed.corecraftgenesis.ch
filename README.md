@@ -1,25 +1,24 @@
-
-🌱 CoreCraft Genesis DNSSeed
+CoreCraft Genesis DNSSeed
 Anchoring nodes in mythic infrastructure
 
 A5
-📜 Manifest
+Manifest
 Seed Domain: dnsseed.corecraftgenesis.ch
 Chain: Chain2025
 Audit Seal: Echo 25
 Genesis Hash: [insert hash]
-✅ Validierungen
+Validierungen
 Bitcoin: Header‑Hash & Merkle Root Cross‑check
 Osmosis: Tendermint Commit & Validator Set Proof
 Mars Protocol: Governance & Contracts Integrity Audit
 Hyperspace Metaverse: Asset Provenance & Session Manifests
 Chain GPT: Model Artifact Hashes & Signed Releases
-🛠️ Integration
+Integration
 dig +short dnsseed.corecraftgenesis.ch
 
 addnode=dnsseed.corecraftgenesis.ch
 
-🧾 Echo Artefakte
+Echo Artefakte
 Chain2025 README · Repro & Sicherheit
 Genesis Manifest Hub · Manifeste & Hashes
 Echo 25 Poster · Audit‑Siegel
