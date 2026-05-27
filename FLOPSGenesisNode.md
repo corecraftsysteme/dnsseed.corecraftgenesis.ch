@@ -2,9 +2,7 @@
 
 Here's a breakdown of what FLOPSGenesisNode is and how it fits into the broader FLOPS ecosystem:
 
----
-
-### 🧠 What Is FLOPSGenesisNode?
+### What Is FLOPSGenesisNode?
 
 FLOPSGenesisNode is part of the **FLOPS Protocol**, a decentralized AI infrastructure project that aims to democratize access to AI model training and governance. It operates within a **dual-track system**:
 
@@ -13,9 +11,7 @@ FLOPSGenesisNode is part of the **FLOPS Protocol**, a decentralized AI infrastru
 
 The GenesisNode likely refers to **early participants or nodes** in this decentralized network who contribute compute resources and help bootstrap the protocol’s AI training capabilities.
 
----
-
-### 🔧 Key Features of FLOPS Protocol
+###  Key Features of FLOPS Protocol
 
 - **Decentralized AI Mining**: Aggregates demand across multiple AI protocols, similar to early Bitcoin mining strategies.
 - **Transparent Governance**: Community-driven decisions on treasury allocation and protocol strategies.
@@ -26,9 +22,8 @@ The GenesisNode likely refers to **early participants or nodes** in this decentr
   - *Q4 2025*: Mining strategies implemented.
   - *Q1 2026*: Value-accrual mechanisms deployed.
 
----
 
-### 🌍 Context in the AI Landscape
+### Context in the AI Landscape
 
 FLOPSGenesisNode emerges amid a surge in large-scale AI model training. Over 30 models have been trained at the scale of GPT-4 (over \(10^{25}\) FLOPs), with increasing interest in decentralized approaches to AI compute.
 
