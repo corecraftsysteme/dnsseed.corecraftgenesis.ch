@@ -58,13 +58,3 @@ dnsseed.corecraftgenesis.ch
 © CoreCraft Genesis — audit‑sealed
 
 ---
-
-Wenn du willst, kann ich diesen Text jetzt:
-
-- **direkt in dein bestehendes HTML einfügen**  
-- als **Portal‑Card‑Block** formatieren  
-- als **A5‑Poster‑Text** setzen  
-- als **Marketing‑PDF‑Text** aufbereiten  
-- oder als **Genesis‑Manifest‑Abschnitt** integrieren  
-
-Sag mir einfach, **wo genau im HTML er erscheinen soll**.
