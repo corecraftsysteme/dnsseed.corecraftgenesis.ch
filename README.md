@@ -1,8 +1,3 @@
-Hier ist deine Passage **marketing‑technisch geschärft**, **klarer**, **prägnanter**, **professionell**, aber **mit allen technischen Bezeichnungen vollständig erhalten**.  
-Ich halte es bewusst **kompakt, kraftvoll, CI‑tauglich**, ohne HTML, damit du es direkt in jede Seite einbauen kannst.
-
----
-
 ## **CoreCraft Genesis DNSSeed — Marketing‑technisch optimierte Version**
 
 **CoreCraft Genesis DNSSeed**  
