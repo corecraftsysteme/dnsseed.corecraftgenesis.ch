@@ -99,11 +99,18 @@
 
 <div class="content">
 
-<h1>🌱 CoreCraft Genesis DNSSeed</h1>
+<h1>CoreCraft Genesis DNSSeed</h1>
+    <div id="dnsseed-nav"></div>
+<script>
+    fetch("nav.html")
+        .then(r => r.text())
+        .then(h => document.getElementById("dnsseed-nav").innerHTML = h);
+</script>
+
 <div class="subtitle"><i>Anchoring nodes in mythic infrastructure</i></div>
 
 <div class="box">
-    <h2>📜 Manifest</h2>
+    <h2>Manifest</h2>
     <p><b>Seed Domain:</b> dnsseed.corecraftgenesis.ch<br>
        <b>Chain:</b> Chain2025<br>
        <b>Audit Seal:</b> Echo 25<br>
@@ -113,7 +120,7 @@
 </div>
 
 <div class="box">
-    <h2>✅ Validierungen</h2>
+    <h2>Validierungen</h2>
     <ul>
         <li>Bitcoin — Header‑Hash & Merkle Root Cross‑check</li>
         <li>Osmosis — Tendermint Commit & Validator Set Proof</li>
@@ -124,7 +131,7 @@
 </div>
 
 <div class="box">
-    <h2>🛠️ Integration</h2>
+    <h2>Integration</h2>
     <p><b>DNS‑Check:</b><br>
         <code>dig +short dnsseed.corecraftgenesis.ch</code>
     </p>
