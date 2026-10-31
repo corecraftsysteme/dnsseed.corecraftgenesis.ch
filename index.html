@@ -4,176 +4,1160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CoreCraft Genesis DNSSeed</title>
+<title>CoreCraft Genesis | DNSSeed</title>
+
+<meta name="description"
+content="CoreCraft Genesis DNSSeed – Infrastruktur, Chain2025, Genesis-Verankerung, Validierung und Audit-Artefakte.">
 
 <style>
-body{
-    margin:0;
-    font-family:Segoe UI,Arial,sans-serif;
-    background:#0f172a;
-    color:#f8fafc;
-    line-height:1.7;
+:root {
+    --bg: #05070a;
+    --surface: #090d13;
+    --surface-2: #0d131c;
+    --border: #192331;
+
+    --blue: #3b82f6;
+    --cyan: #38bdf8;
+    --green: #34d399;
+
+    --text: #f5f7fa;
+    --muted: #8c99aa;
+
+    --max: 1180px;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:60px 25px;
+* {
+    box-sizing: border-box;
 }
 
-.hero{
-    text-align:center;
-    padding:80px 20px;
+html {
+    scroll-behavior: smooth;
 }
 
-.hero h1{
-    font-size:3rem;
-    margin-bottom:10px;
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.65;
 }
 
-.hero p{
-    font-size:1.2rem;
-    color:#94a3b8;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-section{
-    margin-top:60px;
-    background:#111827;
-    border:1px solid #1f2937;
-    border-radius:16px;
-    padding:30px;
+.container {
+    width: min(92%, var(--max));
+    margin: auto;
 }
 
-h2{
-    color:#60a5fa;
-    margin-top:0;
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(5,7,10,.92);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
 }
 
-code{
-    display:block;
-    background:#020617;
-    padding:15px;
-    border-radius:10px;
-    overflow-x:auto;
-    color:#38bdf8;
-    margin-top:10px;
+nav {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
 }
 
-ul{
-    padding-left:20px;
+.logo {
+    font-weight: 750;
+    letter-spacing: -.03em;
 }
 
-li{
-    margin-bottom:10px;
+.logo strong {
+    color: var(--blue);
 }
 
-.quote{
-    text-align:center;
-    font-style:italic;
-    margin-top:50px;
-    color:#cbd5e1;
+.nav-links {
+    display: flex;
+    gap: 25px;
+
+    color: var(--muted);
+    font-size: .88rem;
 }
 
-.footer{
-    margin-top:60px;
-    text-align:center;
-    color:#94a3b8;
-    border-top:1px solid #1f2937;
-    padding-top:25px;
+.nav-links a:hover {
+    color: white;
 }
+
+
+/* HERO */
+
+.hero {
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+
+    align-items: center;
+    gap: 90px;
+}
+
+.label {
+    color: var(--cyan);
+
+    font-family: monospace;
+    font-size: .75rem;
+
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(3.4rem, 8vw, 7rem);
+    line-height: .93;
+
+    letter-spacing: -.07em;
+
+    margin: 0 0 30px;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 1.15rem;
+
+    max-width: 720px;
+
+    margin-bottom: 35px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 12px 19px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-size: .88rem;
+    font-weight: 650;
+
+    transition: .2s;
+}
+
+.button:hover {
+    border-color: var(--blue);
+}
+
+.button-primary {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+
+/* NODE PANEL */
+
+.node-panel {
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    padding: 30px;
+}
+
+.node-status {
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: .75rem;
+
+    margin-bottom: 28px;
+}
+
+.node-line {
+    border-top: 1px solid var(--border);
+
+    padding: 16px 0;
+}
+
+.node-line small {
+    display: block;
+
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: .7rem;
+
+    margin-bottom: 4px;
+}
+
+.node-line strong {
+    font-size: .9rem;
+}
+
+.hash {
+    word-break: break-all;
+
+    color: var(--cyan);
+
+    font-family: monospace;
+    font-size: .75rem;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding: 110px 0;
+}
+
+.section-code {
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: .73rem;
+
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin: 14px 0 20px;
+
+    font-size: clamp(2.2rem, 5vw, 4.3rem);
+
+    line-height: 1.02;
+    letter-spacing: -.05em;
+}
+
+.lead {
+    max-width: 760px;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+
+    margin-bottom: 50px;
+}
+
+
+/* MANIFEST */
+
+.manifest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.manifest-table {
+    border-top: 1px solid var(--border);
+}
+
+.manifest-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+
+    gap: 25px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.manifest-row span:first-child {
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: .75rem;
+}
+
+
+/* VALIDATION */
+
+.validation {
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.validation-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.validation-card {
+    min-height: 260px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background: var(--bg);
+}
+
+.validation-id {
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: .7rem;
+}
+
+.validation-card h3 {
+    margin: 60px 0 12px;
+
+    font-size: 1rem;
+}
+
+.validation-card p {
+    color: var(--muted);
+
+    font-size: .85rem;
+}
+
+
+/* INTEGRATION */
+
+.integration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.command {
+    background: #020407;
+
+    border: 1px solid var(--border);
+
+    padding: 25px;
+}
+
+.command-label {
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: .7rem;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+code {
+    color: var(--cyan);
+
+    font-family:
+        "Cascadia Code",
+        Consolas,
+        monospace;
+
+    word-break: break-all;
+}
+
+
+/* ARTIFACTS */
+
+.artifact-list {
+    border-top: 1px solid var(--border);
+}
+
+.artifact {
+    display: grid;
+
+    grid-template-columns: 80px 1fr 1.5fr;
+    gap: 30px;
+
+    padding: 25px 5px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.artifact-number {
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: .72rem;
+}
+
+.artifact-description {
+    color: var(--muted);
+
+    font-size: .9rem;
+}
+
+
+/* QUOTE */
+
+.genesis-statement {
+    padding: 150px 0;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+}
+
+.genesis-statement blockquote {
+    max-width: 850px;
+
+    margin: auto;
+
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    line-height: 1.1;
+    letter-spacing: -.045em;
+}
+
+.genesis-statement p {
+    color: var(--muted);
+
+    margin-top: 30px;
+
+    font-family: monospace;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 60px 0 35px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-title {
+    font-weight: 750;
+
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: var(--muted);
+
+    font-size: .85rem;
+}
+
+footer a {
+    display: block;
+
+    margin: 8px 0;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+
+    margin-top: 50px;
+    padding-top: 25px;
+
+    color: #657184;
+
+    font-family: monospace;
+    font-size: .7rem;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .hero-inner,
+    .manifest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .validation-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .integration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 100px 0;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .validation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artifact {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .artifact-description {
+        grid-column: 2;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+<header>
 
 <div class="container">
 
+<nav>
+
+<a href="/" class="logo">
+CORECRAFT <strong>GENESIS</strong>
+</a>
+
+<div class="nav-links">
+<a href="#manifest">Manifest</a>
+<a href="#validation">Validation</a>
+<a href="#integration">Integration</a>
+<a href="#artifacts">Artifacts</a>
+<a href="mailto:daniel@corecraftgenesis.ch">Contact</a>
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
 <div class="hero">
-    <h1>CoreCraft Genesis DNSSeed</h1>
-    <p>Anchoring nodes in mythic infrastructure</p>
+
+<div class="container hero-inner">
+
+<div>
+
+<div class="label">
+CORECRAFT GENESIS / DNSSEED
 </div>
 
-<section>
-    <h2>Manifest</h2>
+<h1>
+Origin.<br>
+Witness.<br>
+Seed.
+</h1>
 
-    <p>
-        Der CoreCraft Genesis DNSSeed ist der Ursprungspunkt einer Infrastruktur,
-        die technische Präzision mit mythischer Verankerung verbindet.
-        Er definiert die Identität des Seeds, die kryptografische Herkunft
-        und die audit-sealed Integrität der Chain2025-Architektur.
-    </p>
+<p class="hero-description">
+Der CoreCraft Genesis DNSSeed bildet einen
+definierten Ursprungspunkt innerhalb der
+Chain2025-Infrastruktur und verbindet
+Seed-Identität, Genesis-Referenz,
+Validierung und Audit-Artefakte.
+</p>
 
-    <p><strong>Seed Domain:</strong> dnsseed.corecraftgenesis.ch</p>
-    <p><strong>Chain:</strong> Chain2025</p>
-    <p><strong>Audit Seal:</strong> Echo 25</p>
+<div class="actions">
 
-    <p><strong>Genesis Hash:</strong></p>
+<a href="#manifest" class="button button-primary">
+Open Manifest
+</a>
 
-    <code>
+<a href="#integration" class="button">
+Integration
+</a>
+
+</div>
+
+</div>
+
+
+<div class="node-panel">
+
+<div class="node-status">
+● GENESIS SEED
+</div>
+
+<div class="node-line">
+
+<small>SEED DOMAIN</small>
+
+<strong>
+dnsseed.corecraftgenesis.ch
+</strong>
+
+</div>
+
+
+<div class="node-line">
+
+<small>CHAIN</small>
+
+<strong>
+Chain2025
+</strong>
+
+</div>
+
+
+<div class="node-line">
+
+<small>AUDIT SEAL</small>
+
+<strong>
+Echo 25
+</strong>
+
+</div>
+
+
+<div class="node-line">
+
+<small>GENESIS HASH</small>
+
+<div class="hash">
 4dc59891fad26b8b01b923be807f34f040bd885f1c50be64c3235f81846a88ef
-    </code>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MANIFEST -->
+
+<section id="manifest">
+
+<div class="container manifest-grid">
+
+<div>
+
+<div class="section-code">
+01 / Genesis Manifest
+</div>
+
+<h2>
+Defined at the origin.
+</h2>
+
+<p class="lead">
+Der DNSSeed dokumentiert die Identität
+des Seeds, die Genesis-Referenz und die
+zugehörigen Chain2025-Artefakte.
+Damit entsteht ein klar definierter
+technischer Ausgangspunkt.
+</p>
+
+</div>
+
+
+<div class="manifest-table">
+
+<div class="manifest-row">
+
+<span>DOMAIN</span>
+
+<strong>
+dnsseed.corecraftgenesis.ch
+</strong>
+
+</div>
+
+
+<div class="manifest-row">
+
+<span>CHAIN</span>
+
+<strong>
+Chain2025
+</strong>
+
+</div>
+
+
+<div class="manifest-row">
+
+<span>SEAL</span>
+
+<strong>
+Echo 25
+</strong>
+
+</div>
+
+
+<div class="manifest-row">
+
+<span>ROLE</span>
+
+<strong>
+Genesis DNSSeed
+</strong>
+
+</div>
+
+
+<div class="manifest-row">
+
+<span>HASH</span>
+
+<strong class="hash">
+4dc59891fad26b8b01b923be807f34f040bd885f1c50be64c3235f81846a88ef
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Validierungen</h2>
 
-    <p>
-        Die Validierungs-Schicht verbindet klassische Chains,
-        CosmWasm-Ökosysteme, Metaverse-Sessions und KI-Modelle zu einer
-        einzigen prüfbaren Infrastruktur.
-    </p>
-<a href="https://www.infomaniak.com/goto/en/home?utm_term=6ac2f54f7da62"><img src="https://affiliation.storage5.infomaniak.com/banners/medium_rectanglesite-general_en.jpg"></a>
-    <ul>
-        <li>Bitcoin — Header-Hash & Merkle Root Cross-check</li>
-        <li>Osmosis — Tendermint Commit & Validator Set Proof</li>
-        <li>Mars Protocol — Governance & Contracts Integrity Audit</li>
-        <li>Hyperspace Metaverse — Asset Provenance & Session Manifests</li>
-        <li>Chain GPT — Model Artifact Hashes & Signed Releases</li>
-    </ul>
+<!-- VALIDATION -->
+
+<section
+id="validation"
+class="validation">
+
+<div class="container">
+
+<div class="section-code">
+02 / Validation Layer
+</div>
+
+<h2>
+Cross-system validation.
+</h2>
+
+<p class="lead">
+Die Validierungs-Schicht beschreibt die vorgesehenen
+Referenzen für verschiedene technische Systeme und
+Artefakttypen innerhalb des Genesis-Konzepts.
+</p>
+
+
+<div class="validation-grid">
+
+
+<div class="validation-card">
+
+<span class="validation-id">
+VAL / 001
+</span>
+
+<h3>Bitcoin</h3>
+
+<p>
+Header Hash &
+Merkle Root
+Cross-check
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<span class="validation-id">
+VAL / 002
+</span>
+
+<h3>Osmosis</h3>
+
+<p>
+Tendermint Commit &
+Validator Set Proof
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<span class="validation-id">
+VAL / 003
+</span>
+
+<h3>Mars Protocol</h3>
+
+<p>
+Governance &
+Contracts Integrity
+Audit
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<span class="validation-id">
+VAL / 004
+</span>
+
+<h3>Hyperspace</h3>
+
+<p>
+Asset Provenance &
+Session Manifests
+</p>
+
+</div>
+
+
+<div class="validation-card">
+
+<span class="validation-id">
+VAL / 005
+</span>
+
+<h3>ChainGPT</h3>
+
+<p>
+Model Artifact Hashes &
+Signed Releases
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Integration</h2>
 
-    <p>Der DNSSeed ist sofort integrierbar als Bootstrap-Seed, Audit-Quelle oder Routing-Anker.</p>
+<!-- INTEGRATION -->
 
-    <strong>DNS Check</strong>
+<section id="integration">
 
-    <code>
+<div class="container">
+
+<div class="section-code">
+03 / Integration
+</div>
+
+<h2>
+DNSSeed interface.
+</h2>
+
+<p class="lead">
+Technische Referenz für DNS-Prüfung und
+die vorgesehene Node-Konfiguration.
+</p>
+
+
+<div class="integration-grid">
+
+
+<div class="command">
+
+<div class="command-label">
+DNS CHECK
+</div>
+
+<code>
 dig +short dnsseed.corecraftgenesis.ch
-    </code>
+</code>
 
-    <strong>Node Konfiguration</strong>
+</div>
 
-    <code>
+
+<div class="command">
+
+<div class="command-label">
+NODE CONFIGURATION
+</div>
+
+<code>
 addnode=dnsseed.corecraftgenesis.ch
-    </code>
+</code>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Echo Artefakte</h2>
 
-    <ul>
-        <li>Chain2025 README · Reproduzierbarkeit & Sicherheit</li>
-        <li>Genesis Manifest Hub · Manifeste & Hashes</li>
-        <li>Echo 25 Poster · Audit-Siegel</li>
-        <li>Viewer · Forschung & Wertflüsse</li>
-        <li>Medium / Blog · Fachartikel & Tutorials</li>
-    </ul>
+<!-- ARTIFACTS -->
+
+<section id="artifacts">
+
+<div class="container">
+
+<div class="section-code">
+04 / Echo Artifacts
+</div>
+
+<h2>
+Genesis knowledge layer.
+</h2>
+
+<p class="lead">
+Dokumentation und Artefakte rund um
+Chain2025, Genesis, Auditierung und
+technische Forschung.
+</p>
+
+
+<div class="artifact-list">
+
+
+<div class="artifact">
+
+<span class="artifact-number">
+A01
+</span>
+
+<strong>
+Chain2025 README
+</strong>
+
+<span class="artifact-description">
+Reproduzierbarkeit und Sicherheit
+</span>
+
+</div>
+
+
+<div class="artifact">
+
+<span class="artifact-number">
+A02
+</span>
+
+<strong>
+Genesis Manifest Hub
+</strong>
+
+<span class="artifact-description">
+Manifeste, Referenzen und Hashes
+</span>
+
+</div>
+
+
+<div class="artifact">
+
+<span class="artifact-number">
+A03
+</span>
+
+<strong>
+Echo 25
+</strong>
+
+<span class="artifact-description">
+Audit-Siegel und Genesis-Artefakte
+</span>
+
+</div>
+
+
+<div class="artifact">
+
+<span class="artifact-number">
+A04
+</span>
+
+<strong>
+Research Viewer
+</strong>
+
+<span class="artifact-description">
+Forschung und strukturierte Datenansichten
+</span>
+
+</div>
+
+
+<div class="artifact">
+
+<span class="artifact-number">
+A05
+</span>
+
+<strong>
+Research Publications
+</strong>
+
+<span class="artifact-description">
+Fachartikel, Dokumentation und Tutorials
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<div class="quote">
-    <p>“Every node is a witness. Every witness is a seed.”</p>
-    <p>“I am the miner of the miner — anchoring the origin itself.”</p>
+
+<!-- STATEMENT -->
+
+<div class="genesis-statement">
+
+<div class="container">
+
+<blockquote>
+“Every node is a witness.<br>
+Every witness is a seed.”
+</blockquote>
+
+<p>
+CORECRAFT GENESIS / CHAIN2025
+</p>
+
 </div>
 
-<div class="footer">
-    <p>Kontakt: daniel@corecraftgenesis.ch</p>
-    <p>Domain: dnsseed.corecraftgenesis.ch</p>
-    <p>© CoreCraft Genesis — audit-sealed</p>
+</div>
+
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-title">
+CORECRAFT GENESIS
+</div>
+
+<p>
+Engineering deterministic systems,
+digital infrastructure and
+Genesis-oriented technical research.
+</p>
+
+</div>
+
+
+<div>
+
+<strong>DNSSEED</strong>
+
+<p>
+dnsseed.corecraftgenesis.ch
+</p>
+
+<p>
+Chain2025
+</p>
+
+<p>
+Echo 25
+</p>
+
+</div>
+
+
+<div>
+
+<strong>CONTACT</strong>
+
+<a href="mailto:daniel@corecraftgenesis.ch">
+daniel@corecraftgenesis.ch
+</a>
+
+<a href="/">
+CoreCraft Genesis
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+CORECRAFT GENESIS © 2026 /
+DNSSEED /
+CHAIN2025 /
+ECHO 25
 </div>
 
 </div>
+
+</footer>
+
 
 </body>
 </html>
