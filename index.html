@@ -157,18 +157,25 @@
         }
 
         .hero-grid {
-            width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(360px, .9fr);
+    align-items: center;
+    gap: 64px;
+    padding: 100px 40px;
+}
 
-            display: grid;
-            grid-template-columns:
-                minmax(0, 1.25fr)
-                minmax(320px, .75fr);
+.hero-grid > div:first-child {
+    max-width: 760px;
+}
 
-            align-items: center;
-            gap: 80px;
-
-            padding: 100px 0;
-        }
+.seed-panel {
+    width: 100%;
+    max-width: 520px;
+    justify-self: center;
+}
 
         .eyebrow,
         .section-code {
@@ -819,37 +826,37 @@
             >
 
                 <div class="seed-state">
-                    ● DNSSEED REFERENCE
-                </div>
+    ● CHAIN2025 DNS SEED REFERENCE
+</div>
 
-                <div class="seed-row">
-                    <span>HOSTNAME</span>
-                    <strong>
-                        dnsseed.corecraftgenesis.ch
-                    </strong>
-                </div>
+<div class="seed-row">
+    <span>DNS SEED HOST</span>
+    <strong>
+        dnsseed.corecraftgenesis.ch
+    </strong>
+</div>
 
-                <div class="seed-row">
-                    <span>NETWORK</span>
-                    <strong>
-                        Chain2025
-                    </strong>
-                </div>
+<div class="seed-row">
+    <span>NETWORK</span>
+    <strong>Chain2025</strong>
+</div>
 
-                <div class="seed-row">
-                    <span>ARTIFACT SET</span>
-                    <strong>
-                        Echo 25
-                    </strong>
-                </div>
+<div class="seed-row">
+    <span>GENESIS BLOCK</span>
+    <strong>Block 0</strong>
+</div>
 
-                <div class="seed-row">
-                    <span>GENESIS REFERENCE</span>
+<div class="seed-row">
+    <span>GENESIS BLOCK HASH</span>
+    <div class="hash">
+        4dc59891fad26b8b01b923be807f34f040bd885f1c50be64c3235f81846a88ef
+    </div>
+</div>
 
-                    <div class="hash">
-                        4dc59891fad26b8b01b923be807f34f040bd885f1c50be64c3235f81846a88ef
-                    </div>
-                </div>
+<div class="seed-row">
+    <span>REFERENCE ARTIFACT SET</span>
+    <strong>Echo 25</strong>
+</div>
 
             </aside>
 
